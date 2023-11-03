@@ -6,7 +6,7 @@ import main.java.com.solvd.taxi.utils.Fare;
 import main.java.com.solvd.taxi.human.Location;
 import main.java.com.solvd.taxi.human.Rating;
 
-public class Ride {
+public class Ride extends RideType {
 
     private int id;
     private Driver driver;
@@ -15,17 +15,17 @@ public class Ride {
     private Location endLocation;
     private Fare fare;
     private Rating rating;
-    private Vehicle vehicle;
+    private Car car;
 
 
     public Ride() {
     }
 
-    public Ride(int id, Fare fare, Rating rating, Vehicle vehicle) {
+    public Ride(int id, Fare fare, Rating rating, Car car) {
         this.id = id;
         this.fare = fare;
         this.rating = rating;
-        this.vehicle = vehicle;
+        this.car = car;
     }
 
     // getters
@@ -42,8 +42,8 @@ public class Ride {
         return rating;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public Car getVehicle() {
+        return car;
     }
 
 
@@ -61,8 +61,15 @@ public class Ride {
         this.rating = rating;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicle(Car car) {
+        this.car = car;
+    }
+
+
+    // set this as economy fare for testing
+    @Override
+    public double addCostService() {
+        return 20;
     }
 }
 

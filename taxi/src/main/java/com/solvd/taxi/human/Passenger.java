@@ -1,6 +1,6 @@
 package main.java.com.solvd.taxi.human;
 
-public class Passenger {
+public class Passenger extends Human {
 
     private int id;
     private String name;
@@ -50,5 +50,15 @@ public class Passenger {
         this.rating = rating;
     }
 
+
+    @Override
+    public void message() {
+        System.out.println("Getting in car");
+    }
+
+    @Override
+    public String getRole() {
+        return "I am a passenger";
+    }
 
 }

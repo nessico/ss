@@ -1,17 +1,16 @@
 package main.java.com.solvd.taxi.utils;
 
-public class Payment {
-
+public abstract class PaymentType {
     private double amount;
     private String currency;
     private String method;
     private String status;
     private String description;
 
-    public Payment() {
+    public PaymentType() {
     }
 
-    public Payment(double amount, String currency, String method, String status, String description) {
+    public PaymentType(double amount, String currency, String method, String status, String description) {
         this.amount = amount;
         this.currency = currency;
         this.method = method;
@@ -59,10 +58,7 @@ public class Payment {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "amount = " + amount + ", currency = " + currency + ", method = " + method + ", status = " + status + ", description = " + description;
-    }
+    public abstract void processPayment();
 
-
+    public abstract String toString();
 }

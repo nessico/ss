@@ -1,15 +1,15 @@
 package main.java.com.solvd.taxi.human;
 
-import main.java.com.solvd.taxi.car.Vehicle;
+import main.java.com.solvd.taxi.car.Car;
 import main.java.com.solvd.taxi.utils.ServiceArea;
 
-public class Driver {
+public class Driver extends Human {
     // Taxi driver
 
     private int id;
     private String name;
     private String phone;
-    private Vehicle vehicle;
+    private Car car;
     private Rating rating;
     private float salary;
 
@@ -18,11 +18,11 @@ public class Driver {
     public Driver() {
     }
 
-    public Driver(int id, String name, String phone, Vehicle vehicle, Rating rating, float salary, ServiceArea serviceArea) {
+    public Driver(int id, String name, String phone, Car car, Rating rating, float salary, ServiceArea serviceArea) {
         this.id = id;
         this.name = name;
         this.phone = phone;
-        this.vehicle = vehicle;
+        this.car = car;
         this.rating = rating;
         this.salary = salary;
         this.serviceArea = serviceArea;
@@ -43,8 +43,8 @@ public class Driver {
         return phone;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public Car getVehicle() {
+        return car;
     }
 
     public Rating getRating() {
@@ -74,8 +74,8 @@ public class Driver {
         this.phone = phone;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicle(Car car) {
+        this.car = car;
     }
 
     public void setRating(Rating rating) {
@@ -90,5 +90,15 @@ public class Driver {
         this.serviceArea = serviceArea;
     }
 
+    @Override
+    public void message() {
+        System.out.println("Picking up passenger");
+    }
+
+    @Override
+    public String getRole() {
+        return "I am a driver";
+    }
 
 }
+
